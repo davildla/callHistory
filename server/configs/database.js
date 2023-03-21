@@ -1,7 +1,9 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/callHistoryDB',{
+const password = process.env.ATLAS_PASSWORD;
+
+mongoose.connect(`mongodb+srv://davidticcenter:${password}@cluster0.dwev9sv.mongodb.net/?retryWrites=true&w=majority`,{
     useNewUrlParser : true,
     useUnifiedTopology : true,
 })
